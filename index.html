@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Schiffe Versenken Singleplayer :)">
+    <title>Schiffe Versenken</title>
+    <link rel="stylesheet" href="./theme.css">
+    <link rel="stylesheet" href="./singleplayer.css">
+    <link rel="shortcut icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+<body class="dark" data-theme="dark">
+    <script type="module" src="./singleplayer.js"></script>
+    <div class="wrapper">
+        <header>
+            <h1><a href="./index.html">Schiffe Versenken</a></h1>
+            <button id="themeToggle" class="themeToggle"><img src="./assets/icons/moon.svg" alt="Icon" id="themeIcon" height="50px"></button>
+        </header>
+
+        <div class="spielfelder">
+            <div class="settings" id="settings">
+                <input type="number" min="0" max="5" placeholder="Anzahl 2er Schiffe" required id="ships2">
+                <input type="number" min="0" max="5" placeholder="Anzahl 3er Schiffe" required id="ships3">
+                <input type="number" min="0" max="5" placeholder="Anzahl 4er Schiffe" required id="ships4">
+            </div>
+            <div class="grid-wrapper">
+                <div id="spieler"></div>
+            </div>
+            <div class="grid-wrapper">
+                <div id="gegner"></div>
+            </div>
+            <div class="diff" id="diff">
+                <button id="diffToggle">Schwierigkeit: Normal</button>
+                <button id="startButton">Spiel starten</button>
+                <button id="standardButton">Standardwerte</button>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-div footer-settings">
+                <input type="checkbox" id="delays" checked>
+                <p>Bot-Delays</p>
+                <input type="checkbox" id="empty">
+                <p>Leere Felder markieren</p>
+                <input type="checkbox" id="best">
+                <p>Besten Angriff markieren</p>
+            </div>
+            <div class="footer-div footer-text">
+                <p>© 2025</p>
+            </div>
+            <div class="footer-div footer-report">
+                <button class="help-button" id="help-button" onclick="window.open('./help.html', '_blank')">Hilfe</button>
+                <button class="report-button" id="report-button">Feedback</button>
+            </div>
+        </footer>
+    </div>
+    <div id="status" class="status invisible"></div>
+    <div id="help" class="help invisible"></div>
+    <div class="report-window invisible" id="report-window">
+        <div class="report" id="report">
+            <textarea id="report-input" class="report-input" placeholder="Beschreibe ein Problem oder gib Feedback..." ></textarea>
+            <div class="submit-div">
+                <button id="submit" class="submit">Absenden</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
